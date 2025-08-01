@@ -512,13 +512,29 @@
                 </div>
                 
                 <div class="overview-map">
-                    <div style="text-align: center; padding: 20px;">
-                        <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: var(--primary-blue);"></i>
-                        <p style="margin-top: 15px; font-weight: 600;">Map of Zambia<br><span style="font-size: 0.9rem; color: var(--steel-gray);">Location Highlighted</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div id="map" style="width: 100%; height: 400px;"></div>
+</div>
+
+<script>
+  function initMap() {
+    const kitwe = { lat: -12.848055775227404, lng:28.242269564241553 }; // Coordinates for Kitwe, Zambia
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: kitwe,
+    });
+
+    // Optional: Add a marker for Kitwe
+    new google.maps.Marker({
+      position: kitwe,
+      map: map,
+      title: "Kitwe, Zambia"
+    });
+  }
+</script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ6C-s9M9TJUsxIQr45vh9z22zfpTGaeE&callback=initMap">
+</script>
     </section>
 
     <!-- About Us -->
