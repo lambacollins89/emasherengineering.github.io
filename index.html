@@ -3,595 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMASHER ENGINEERING - Company Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>EMASHER ENGINEERING - Mining Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --primary-blue: #2C5282;
-            --steel-gray: #4A5568;
-            --accent-orange: #DD6B20;
-            --light-gray: #F7FAFC;
-            --white: #FFFFFF;
+            --mining-brown: #62442A;
+            --mining-gold: #F6B41A;
+            --mining-dark: #2B2A29;
+            --light-gray: #F5F7FA;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
         body {
             font-family: 'Open Sans', sans-serif;
-            color: var(--steel-gray);
-            background-color: var(--white);
-            line-height: 1.6;
+            background: var(--light-gray);
         }
-        
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Cover Page */
-        .cover-page {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1612637585212-9d4b4f6d8b3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            position: relative;
-        }
-        
-        .cover-page h1 {
-            font-size: 4rem;
             font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: var(--mining-gold);
+            letter-spacing: .5px;
         }
-        
-        .cover-page .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
-            font-weight: 500;
-        }
-        
-        .contact-info {
-            position: absolute;
-            bottom: 40px;
-            left: 0;
-            right: 0;
-            text-align: center;
-        }
-        
-        .contact-info p {
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--accent-orange);
-        }
-        
-        /* Company Overview */
-        .company-overview {
-            padding: 80px 0;
-            background-color: var(--light-gray);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
         .section-title:after {
             content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
+            display: block;
+            margin: 0.5rem auto 0;
             width: 80px;
             height: 4px;
-            background-color: var(--accent-orange);
+            background: var(--mining-gold);
+            border-radius: 4px;
         }
-        
-        .overview-content {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .overview-text {
-            flex: 1;
-        }
-        
-        .overview-map {
-            flex: 1;
-            height: 400px;
-            background-color: #e2e8f0;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        
-        .contact-box {
-            background-color: var(--white);
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-box h3 {
-            margin-bottom: 15px;
-            color: var(--primary-blue);
-        }
-        
-        .contact-box p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-box i {
-            margin-right: 10px;
-            color: var(--accent-orange);
-        }
-        
-        /* About Us */
-        .about-us {
-            padding: 80px 0;
-            position: relative;
-            background: url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-        }
-        
-        .about-us::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(255, 255, 255, 0.9);
-            z-index: 0;
-        }
-        
-        .about-content {
-            display: flex;
-            gap: 40px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .vision-mission {
-            flex: 1;
-        }
-        
-        .quote-box {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .quote-box h3 {
-            color: var(--white);
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-        }
-        
-        .values {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .value-item {
-            flex: 1 1 calc(50% - 10px);
-            background-color: var(--white);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-        }
-        
-        .value-item i {
-            font-size: 2rem;
-            color: var(--accent-orange);
-            margin-right: 15px;
-        }
-        
-        /* Core Competencies */
-        .core-competencies {
-            padding: 80px 0;
-            background-color: var(--light-gray);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
         .service-card {
-            background-color: var(--white);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-7px) scale(1.03);
+            box-shadow: 0 14px 30px rgba(34,25,25,0.19);
         }
-        
-        .service-card i {
-            font-size: 2.5rem;
-            color: var(--accent-orange);
-            margin-bottom: 15px;
+        .mining-bg {
+            background:url('mi.jpg') center/cover no-repeat;
         }
-        
-        .service-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        /* Why Choose Us */
-        .why-choose {
-            padding: 80px 0;
-            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            position: relative;
-        }
-        
-        .why-choose::before {
-            content: '';
+        .dark-overlay {
+            background: rgba(42,32,22,0.7);
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(44, 82, 130, 0.85);
-            z-index: 0;
-        }
-        
-        .why-choose .section-title {
-            color: var(--white);
-        }
-        
-        .why-choose .section-title:after {
-            background-color: var(--accent-orange);
-        }
-        
-        .advantages {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            position: relative;
+            inset: 0;
             z-index: 1;
         }
-        
-        .advantage-item {
-            flex: 1 1 calc(33.333% - 20px);
-            max-width: 350px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .advantage-item i {
-            font-size: 2.5rem;
-            color: var(--accent-orange);
-            margin-bottom: 15px;
-        }
-        
-        .advantage-item h3 {
-            color: var(--primary-blue);
-            margin-bottom: 10px;
-        }
-        
-        /* Partnerships */
-        .partnerships {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-        
-        .partnership-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .partnership-content p {
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-        
-        .partnership-visual {
-            display: flex;
-            justify-content: center;
-            margin: 40px 0;
-        }
-        
-        .partnership-icon {
-            width: 120px;
-            height: 120px;
-            background-color: var(--light-gray);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 20px;
-        }
-        
-        .partnership-icon i {
-            font-size: 3rem;
-            color: var(--primary-blue);
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-orange);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-            transition: background-color 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            background-color: #c05a17;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            padding: 80px 0;
-            background-color: var(--primary-blue);
-            color: var(--white);
-        }
-        
-        .contact-section .section-title {
-            color: var(--white);
-        }
-        
-        .contact-section .section-title:after {
-            background-color: var(--accent-orange);
-        }
-        
-        .contact-details {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .contact-item {
-            flex: 1 1 calc(50% - 15px);
-            min-width: 250px;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-item i {
-            font-size: 2rem;
-            color: var(--accent-orange);
-            margin-right: 20px;
-        }
-        
-        .contact-item h3 {
-            color: var(--white);
-            margin-bottom: 5px;
-        }
-        
-        .qr-code {
-            width: 150px;
-            height: 150px;
-            background-color: var(--white);
-            border-radius: 8px;
-            margin: 30px auto 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--steel-gray);
-            text-align: center;
-        }
-        
-        .contact-cta {
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        .contact-cta .cta-button {
-            background-color: var(--accent-orange);
-        }
-        
-        .contact-cta .cta-button:hover {
-            background-color: #c05a17;
-        }
-        
-        /* Footer */
-        footer {
-            padding: 30px 0;
-            background-color: var(--steel-gray);
-            color: var(--white);
-            text-align: center;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .cover-page h1 {
-                font-size: 2.5rem;
-            }
-            
-            .cover-page .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .overview-content, .about-content {
-                flex-direction: column;
-            }
-            
-            .advantage-item {
-                flex: 1 1 calc(50% - 15px);
-            }
-            
-            .contact-item {
-                flex: 1 1 100%;
-            }
+        .carousel-controls button {
+            box-shadow: 0 4px 18px var(--mining-brown);
         }
     </style>
 </head>
 <body>
-    <!-- Cover Page -->
-    <section class="cover-page" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1612637585212-9d4b4f6d8b3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-        <h1>EMASHER ENGINEERING</h1>
-        <p class="tagline">Your Partner in Integrated Industrial Solutions</p>
-        
-        <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> 1629 Tafuna Street Ndeke ZCBC Village, Kitwe, Zambia</p>
-            <p><i class="fas fa-phone"></i> 0962227157, 0971898130</p>
-            <p><i class="fas fa-envelope"></i> emasherengineering@gmail.com</p>
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full top-0 left-0 z-50 bg-[#1A1A1A] bg-opacity-90 backdrop-blur border-b border-mining-gold shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="text-3xl font-bold text-[var(--mining-gold)] flex items-center">
+                <i class="fas fa-hard-hat mr-3"></i>EMASHER ENGINEERING
+            </div>
+            <div class="hidden md:flex space-x-10 uppercase font-semibold">
+                <a href="#home" class="text-white hover:text-[var(--mining-gold)] transition">Home</a>
+                <a href="#about" class="text-white hover:text-[var(--mining-gold)] transition">About</a>
+                <a href="#services" class="text-white hover:text-[var(--mining-gold)] transition">Services</a>
+                <a href="#contact" class="text-white hover:text-[var(--mining-gold)] transition">Contact</a>
+            </div>
+            <button class="md:hidden text-[var(--mining-gold)]" id="mobile-menu-button">
+                <i class="fas fa-bars text-3xl"></i>
+            </button>
+        </div>
+        <div class="hidden md:hidden bg-[#1A1A1A] bg-opacity-98" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-5">
+                <a href="#home" class="text-white hover:text-[var(--mining-gold)] transition font-medium">Home</a>
+                <a href="#about" class="text-white hover:text-[var(--mining-gold)] transition font-medium">About</a>
+                <a href="#services" class="text-white hover:text-[var(--mining-gold)] transition font-medium">Services</a>
+                <a href="#contact" class="text-white hover:text-[var(--mining-gold)] transition font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cover Page Section -->
+    <section id="home" class="relative min-h-screen mining-bg flex items-center justify-center pt-28">
+        <div class="dark-overlay"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <img src="dumpp.jpg" alt="Mining Loader" class="mx-auto mb-6 w-56 h-56 object-contain rounded-lg border-4 border-[var(--mining-gold)] shadow-xl">
+            <h1 class="text-5xl md:text-6xl font-bold uppercase tracking-widest mb-5 font-montserrat text-[var(--mining-gold)] drop-shadow-lg">Emasher Engineering</h1>
+            <p class="tagline text-xl md:text-2xl font-light italic mb-10 text-white opacity-95 drop-shadow-lg">Integrated Mining & Industrial Solutions Partner</p>
+            <div class="flex flex-wrap justify-center gap-6 bg-black bg-opacity-60 py-6 rounded-xl shadow-xl max-w-3xl mx-auto">
+                <div class="flex items-center space-x-3 text-lg text-white">
+                    <i class="fas fa-map-marker-alt text-2xl text-[var(--mining-gold)]"></i>
+                    <span>1629 Tafuna St, Ndeke ZCBC, Kitwe, Zambia</span>
+                </div>
+                <div class="flex items-center space-x-3 text-lg text-white">
+                    <i class="fas fa-phone text-2xl text-[var(--mining-gold)]"></i>
+                    <span>0962227157, 0971898130</span>
+                </div>
+                <div class="flex items-center space-x-3 text-lg text-white">
+                    <i class="fas fa-envelope text-2xl text-[var(--mining-gold)]"></i>
+                    <span>emasherengineering@gmail.com</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Company Overview -->
-    <section class="company-overview">
-        <div class="container">
-            <div class="section-title">
-                <h2>Company Overview</h2>
+    <section id="overview" class="py-20 bg-[#251b12] bg-opacity-90 text-white relative">
+        <div class="container mx-auto px-6">
+            <div class="section-title text-center mb-12 relative">
+                <h2 class="text-4xl">Company Overview</h2>
             </div>
-            
-            <div class="overview-content">
-                <div class="overview-text">
-                    <p>EMASHER ENGINEERING is a dynamic and multifaceted engineering company based in Kitwe, Copperbelt Province, Zambia. We are dedicated to providing a comprehensive suite of high-quality products, services, and solutions across various industrial sectors.</p>
-                    
-                    <p>With a strong commitment to excellence, safety, and client satisfaction, we empower businesses to optimize their operations, enhance efficiency, and achieve sustainable growth.</p>
-                    
-                    <div class="contact-box">
-                        <h3>Contact Information</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> 1629 Tafuna Street Ndeke ZCBC Village, Kitwe, Zambia</p>
-                        <p><i class="fas fa-phone"></i> 0962227157, 0971898130</p>
-                        <p><i class="fas fa-envelope"></i> emasherengineering@gmail.com</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="mb-5 text-lg">EMASHER ENGINEERING is a mining-focused, multifaceted engineering company in Kitwe, Zambia. We provide a full suite of high-quality products, services, and solutions for mining and industrial sectors.</p>
+                    <p class="mb-7 text-lg">Driven by excellence, safety, and client satisfaction, we enable businesses to optimize operations and achieve sustainable growth in challenging environments.</p>
+                    <div class="bg-[var(--mining-dark)] rounded-xl p-6 shadow-lg mt-8">
+                        <h3 class="text-xl mb-3 text-[var(--mining-gold)]">Contact Information</h3>
+                        <p class="flex items-center mb-2"><i class="fas fa-map-marker-alt mr-3 text-[var(--mining-gold)]"></i> 1629 Tafuna Street, Ndeke ZCBC, Kitwe, Zambia</p>
+                        <p class="flex items-center mb-2"><i class="fas fa-phone mr-3 text-[var(--mining-gold)]"></i> 0962227157, 0971898130</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-3 text-[var(--mining-gold)]"></i> emasherengineering@gmail.com</p>
                     </div>
                 </div>
-                
-                <div class="overview-map">
-  <div id="map" style="width: 100%; height: 400px;"></div>
-</div>
+                <iframe
+    width="600"
+    height="450"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBZ6C-s9M9TJUsxIQr45vh9z22zfpTGaeE&q=Kitwe,Zambia">
+</iframe>
 
-<script>
-  function initMap() {
-    const kitwe = { lat: -12.848055775227404, lng:28.242269564241553 }; // Coordinates for Kitwe, Zambia
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 12,
-      center: kitwe,
-    });
-
-    // Optional: Add a marker for Kitwe
-    new google.maps.Marker({
-      position: kitwe,
-      map: map,
-      title: "Kitwe, Zambia"
-    });
-  }
-</script>
-
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ6C-s9M9TJUsxIQr45vh9z22zfpTGaeE&callback=initMap">
-</script>
+            </div>
+        </div>
     </section>
 
     <!-- About Us -->
-    <section class="about-us">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
+    <section id="about" class="py-20 mining-bg relative">
+        <div class="absolute inset-0 bg-black bg-opacity-65 z-0"></div>
+        <div class="container mx-auto px-6 relative z-10 text-white">
+            <div class="section-title text-center mb-12 relative">
+                <h2 class="text-4xl">About Us</h2>
             </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Our team of skilled professionals combines technical expertise with practical experience to deliver innovative and reliable solutions tailored to the unique needs of each client. At EMASHER ENGINEERING, we are more than just a service provider; we are a strategic partner invested in your success.</p>
-                    
-                    <div class="values">
-                        <div class="value-item">
-                            <i class="fas fa-award"></i>
-                            <div>
-                                <h3>Excellence</h3>
-                                <p>Committed to the highest standards</p>
-                            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <p class="mb-7 text-lg">Our expert team unites cutting-edge technical ability with practical experience in mining and heavy industry. EMASHER ENGINEERING is your strategic partner for project success—more than just a contractor.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                        <div class="bg-gradient-to-br from-yellow-900 via-mining-gold to-yellow-600 text-mining-dark font-semibold p-5 rounded-xl shadow-md flex items-center">
+                            <i class="fas fa-award text-3xl mr-4"></i>
+                            Excellence
                         </div>
-                        
-                        <div class="value-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h3>Safety</h3>
-                                <p>Protecting people and environment</p>
-                            </div>
+                        <div class="bg-gradient-to-br from-orange-800 via-mining-gold to-yellow-600 text-mining-dark font-semibold p-5 rounded-xl shadow-md flex items-center">
+                            <i class="fas fa-shield-alt text-3xl mr-4"></i>
+                            Safety
                         </div>
-                        
-                        <div class="value-item">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h3>Teamwork</h3>
-                                <p>Collaborative approach to solutions</p>
-                            </div>
+                        <div class="bg-gradient-to-br from-yellow-700 via-mining-gold to-yellow-400 text-mining-dark font-semibold p-5 rounded-xl shadow-md flex items-center">
+                            <i class="fas fa-users text-3xl mr-4"></i>
+                            Teamwork
                         </div>
-                        
-                        <div class="value-item">
-                            <i class="fas fa-lightbulb"></i>
-                            <div>
-                                <h3>Innovation</h3>
-                                <p>Creative solutions for complex challenges</p>
-                            </div>
+                        <div class="bg-gradient-to-br from-yellow-800 via-mining-gold to-yellow-600 text-mining-dark font-semibold p-5 rounded-xl shadow-md flex items-center">
+                            <i class="fas fa-lightbulb text-3xl mr-4"></i>
+                            Innovation
                         </div>
                     </div>
                 </div>
-                
-                <div class="vision-mission">
-                    <div class="quote-box">
-                        <h3>Our Vision</h3>
-                        <p>To be the leading integrated engineering solutions provider in the region, recognized for our unparalleled quality, reliability, and commitment to client success.</p>
+                <div class="space-y-6">
+                    <div class="bg-[var(--mining-gold)] text-[var(--mining-dark)] p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl mb-3 text-white">Our Vision</h3>
+                        <p>To lead Zambia’s mining services sector in quality, reliability, and client-focused outcomes.</p>
                     </div>
-                    
-                    <div class="quote-box">
-                        <h3>Our Mission</h3>
-                        <p>To deliver exceptional engineering services and products that drive operational excellence, improve safety, and provide sustainable value to our clients across diverse industries.</p>
+                    <div class="bg-[var(--mining-gold)] text-[var(--mining-dark)] p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl mb-3 text-white">Our Mission</h3>
+                        <p>To deliver safe, innovative, and sustainable solutions that transform our clients’ mining operations.</p>
                     </div>
                 </div>
             </div>
@@ -599,208 +183,341 @@
     </section>
 
     <!-- Core Competencies & Services -->
-    <section class="core-competencies">
-        <div class="container">
-            <div class="section-title">
-                <h2>Core Competencies & Services</h2>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Electrical & Mechanical Works</h3>
-                    <p>Industrial electrical installations, maintenance, and fault finding. Mechanical system design, fabrication, installation, and repair.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-building"></i>
-                    <h3>Civil Works</h3>
-                    <p>Industrial building construction and renovation. Infrastructure development and maintenance. Concrete works, foundations, and structural repairs.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>Mining Equipment & Tools</h3>
-                    <p>Supply of a wide range of mining equipment and specialized tools. Procurement and logistics for essential mining consumables.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-broom"></i>
-                    <h3>Cleaning Services</h3>
-                    <p>Industrial-grade cleaning for workshops, plants, and commercial premises. Specialized cleaning for heavy machinery and equipment.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-users-cog"></i>
-                    <h3>Hired Labour</h3>
-                    <p>Provision of skilled and semi-skilled labor for various industrial projects. Flexible staffing solutions to meet fluctuating project demands.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-fire-extinguisher"></i>
-                    <h3>Fire Suppression Systems</h3>
-                    <p>Design, supply, and installation of state-of-the-art fire suppression systems for industrial applications. Routine inspection, testing, and maintenance.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-conveyor-belt"></i>
-                    <h3>Conveyor Belts & Rollers</h3>
-                    <p>Supply of high-quality conveyor belts and rollers for various material handling needs. Professional installation, splicing, and alignment.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-oil-can"></i>
-                    <h3>Fluid Management Systems</h3>
-                    <p>Auto Lube on Machines: Design, supply, and installation of automatic lubrication systems. Wiggins Supply & Installation for efficient fluid transfer.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Component Repairs</h3>
-                    <p>Specialized repair and refurbishment of critical components for Loaders, Dump Trucks, Fuel Bowsers. Restoring components to OEM specifications.</p>
-                </div>
-                
-                <div class="service-card">
-                    <i class="fas fa-snowflake"></i>
-                    <h3>Air Conditioning & Refrigeration</h3>
-                    <p>Installation, maintenance, and repair of industrial and commercial air conditioning systems. Refrigeration solutions for various applications.</p>
-                </div>
+<section id="services" class="py-20 bg-[#ede5db]">
+    <div class="container mx-auto px-6">
+    <div class="section-title text-center mb-14">
+        <h2 class="text-4xl">Our Mining Services</h2>
+    </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true" data-bs-interval="3000" data-bs-pause="false">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 9"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9" aria-label="Slide 10"></button>
+        </div>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="repair.jpg" class="d-block w-100 carousel-img" alt="Electrical & Mechanical Works">
+            <div class="carousel-caption">
+            <h5>Electrical & Mechanical Works</h5>
+            <p>Industrial electrical installations, heavy machinery maintenance, system design and repairs for mining operations.</p>
             </div>
         </div>
-    </section>
+        <div class="carousel-item">
+            <img src="civilWorks.jpg" class="d-block w-100 carousel-img" alt="Civil Works">
+            <div class="carousel-caption">
+            <h5>Civil Works</h5>
+            <p>Mining site construction, roadways, industrial building foundations, renovations, and infrastructure development.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="mineworks.jpg" class="d-block w-100 carousel-img" alt="Mining Equipment & Tools">
+            <div class="carousel-caption">
+            <h5>Mining Equipment & Tools</h5>
+            <p>Supply and logistics of top-tier mining equipment, dump trucks, loaders, and specialty consumables.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="cleaning.jpg" class="d-block w-100 carousel-img" alt="Cleaning Services">
+            <div class="carousel-caption">
+            <h5>Industrial Cleaning</h5>
+            <p>Heavy equipment cleaning & workshop sanitation featuring specialized mining dust and grease removal techniques.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="kabour.jpg" class="d-block w-100 carousel-img" alt="Hired Labour">
+            <div class="carousel-caption">
+            <h5>Hired Labour</h5>
+            <p>Provision of skilled and semi-skilled men and women for mining projects, with rapid scaling for peak periods.</p>
+        </div>
+        </div>
+        <div class="carousel-item">
+        <img src="fire.jpg" class="d-block w-100 carousel-img" alt="Fire Suppression">
+        <div class="carousel-caption">
+            <h5>Fire Suppression Systems</h5>
+            <p>Design, supply & installation of industrial-grade fire suppression for mining facilities, plus routine testing & maintenance.</p>
+        </div>
+        </div>
+        <div class="carousel-item">
+        <img src="conveyorbelt.jpg" class="d-block w-100 carousel-img" alt="Conveyor Belts">
+        <div class="carousel-caption">
+            <h5>Conveyor Belts & Rollers</h5>
+            <p>Supply, installation & alignment of mining conveyor belts and bulk-handling rollers.</p>
+        </div>
+        </div>
+        <div class="carousel-item">
+        <img src="lubricant.jpg" class="d-block w-100 carousel-img" alt="Fluid Management">
+        <div class="carousel-caption">
+            <h5>Fluid Management</h5>
+            <p>Automated lubrication systems and Wiggins supply & installation—keeping mining machinery in motion.</p>
+        </div>
+        </div>
+        <div class="carousel-item">
+        <img src="restore.jpg" class="d-block w-100 carousel-img" alt="Component Repairs">
+        <div class="carousel-caption">
+            <h5>Component Repairs</h5>
+            <p>Restoring loaders, dump trucks & fuel bowser components to OEM specifications for maximum uptime.</p>
+        </div>
+        </div>
+        <div class="carousel-item">
+        <img src="air.jpg" class="d-block w-100 carousel-img" alt="Air Conditioning">
+        <div class="carousel-caption">
+            <h5>A/C & Refrigeration</h5>
+            <p>Specialized air conditioning and refrigeration solutions for mining offices, equipment, and sensitive material storage.</p>
+        </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+</div>
+
+<style>
+    .carousel-img {
+    max-height: 500px;
+    object-fit: contain;
+    width: 100%;
+    border-radius: 8px;
+    margin: 0 auto;
+    }
+    .carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 15px 20px;
+    bottom: 20px;
+    text-align: center;
+    display: block !important;
+    }
+    .carousel-caption h5 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    .carousel-caption p {
+    color: #f0f0f0;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+    background: rgba(0, 0, 0, 0.3);
+    width: 5%;
+    border-radius: 8px;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+    filter: brightness(100%);
+    }
+    @media (max-width: 768px) {
+    .carousel-img {
+        max-height: 300px;
+        object-fit: contain;
+    }
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+        .carousel-caption p {
+        font-size: 0.9rem;
+    }
+    }
+    </style>
+</section>
+
 
     <!-- Why Choose Us -->
-    <section class="why-choose">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose EMASHER ENGINEERING?</h2>
+    <section id="why-choose" class="py-20 mining-bg relative">
+        <div class="absolute inset-0 bg-black bg-opacity-75"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="section-title text-center mb-12">
+                <h2 class="text-4xl text-[var(--mining-gold)]">Why Choose Us?</h2>
             </div>
-            
-            <div class="advantages">
-                <div class="advantage-item">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <h3>Integrated Solutions</h3>
-                    <p>Single point of contact for diverse industrial needs, streamlining project management and reducing complexities.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
+                <div class="bg-[var(--mining-dark)] bg-opacity-85 rounded-xl p-7 text-center shadow-lg">
+                    <i class="fas fa-truck-loading text-4xl text-[var(--mining-gold)] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Integrated Mining Solutions</h3>
+                    <p>One-stop mining services, streamlining your supply chain and operations.</p>
                 </div>
-                
-                <div class="advantage-item">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Expert Team</h3>
-                    <p>Highly skilled and experienced professionals committed to delivering top-tier services and products.</p>
+                <div class="bg-[var(--mining-dark)] bg-opacity-85 rounded-xl p-7 text-center shadow-lg">
+                    <i class="fas fa-user-tie text-4xl text-[var(--mining-gold)] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Expert Mining Team</h3>
+                    <p>Seasoned engineers and field professionals make us mining project specialists.</p>
                 </div>
-                
-                <div class="advantage-item">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Quality & Reliability</h3>
-                    <p>Adherence to the highest standards of quality and ensuring the reliability of all our solutions.</p>
+                <div class="bg-[var(--mining-dark)] bg-opacity-85 rounded-xl p-7 text-center shadow-lg">
+                    <i class="fas fa-check-circle text-4xl text-[var(--mining-gold)] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Quality & Reliability</h3>
+                    <p>Best-in-class materials, strict standards, and predictable delivery.</p>
                 </div>
-                
-                <div class="advantage-item">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>Safety First</h3>
-                    <p>Safety is paramount in all our operations, protecting our team, clients, and the environment.</p>
+                <div class="bg-[var(--mining-dark)] bg-opacity-85 rounded-xl p-7 text-center shadow-lg">
+                    <i class="fas fa-hard-hat text-4xl text-[var(--mining-gold)] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Safety First</h3>
+                    <p>Zero-compromise approach to workforce and site safety.</p>
                 </div>
-                
-                <div class="advantage-item">
-                    <i class="fas fa-user-friends"></i>
-                    <h3>Customer-Centric Approach</h3>
-                    <p>Prioritizing understanding client needs and delivering tailored solutions that exceed expectations.</p>
+                <div class="bg-[var(--mining-dark)] bg-opacity-85 rounded-xl p-7 text-center shadow-lg">
+                    <i class="fas fa-user-friends text-4xl text-[var(--mining-gold)] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Client Focus</h3>
+                    <p>Custom solutions based on your mine’s unique goals and constraints.</p>
                 </div>
-                
-                <div class="advantage-item">
-                    <i class="fas fa-globe-africa"></i>
-                    <h3>Local Presence, Global Standards</h3>
-                    <p>Rooted in Zambia, our practices and service delivery align with international best practices.</p>
+                <div class="bg-[var(--mining-dark)] bg-opacity-85 rounded-xl p-7 text-center shadow-lg">
+                    <i class="fas fa-globe-africa text-4xl text-[var(--mining-gold)] mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Local Roots, Global Output</h3>
+                    <p>Grounded in Zambia, building to the world’s highest engineering standards.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Partnerships -->
-    <section class="partnerships">
-        <div class="container">
-            <div class="section-title">
-                <h2>Partnerships & Collaborations</h2>
+    <section id="partnerships" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="section-title text-center mb-12">
+                <h2 class="text-4xl text-[var(--mining-brown)]">Strategic Partnerships</h2>
             </div>
-            
-            <div class="partnership-content">
-                <p>EMASHER ENGINEERING is open to strategic partnerships and collaborations that enhance our service offerings and expand our reach, ensuring we continuously provide the best value to our clients.</p>
-                
-                <div class="partnership-visual">
-                    <div class="partnership-icon">
-                        <i class="fas fa-handshake"></i>
+            <div class="text-center max-w-3xl mx-auto">
+                <p class="mb-8 text-xl text-gray-700">We embrace strategic alliances in the mining sector, expanding service capabilities and exceeding client expectations.</p>
+                <div class="flex justify-center gap-8 mb-8">
+                    <div class="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center shadow-xl ring-4 ring-[var(--mining-gold)]">
+                        <i class="fas fa-handshake text-4xl text-[var(--mining-brown)]"></i>
                     </div>
-                    <div class="partnership-icon">
-                        <i class="fas fa-network-wired"></i>
+                    <div class="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center shadow-xl ring-4 ring-[var(--mining-gold)]">
+                        <i class="fas fa-network-wired text-4xl text-[var(--mining-brown)]"></i>
                     </div>
-                    <div class="partnership-icon">
-                        <i class="fas fa-chart-line"></i>
+                    <div class="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center shadow-xl ring-4 ring-[var(--mining-gold)]">
+                        <i class="fas fa-chart-line text-4xl text-[var(--mining-brown)]"></i>
                     </div>
                 </div>
-                
-                <a href="#" class="cta-button">Explore Partnership Opportunities</a>
+                <a href="#contact" class="inline-block bg-[var(--mining-gold)] text-[var(--mining-dark)] py-3 px-8 rounded-full font-semibold font-montserrat hover:bg-yellow-600 transition duration-300">Explore Partnerships</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us Today</h2>
+    <section id="contact" class="py-20 bg-[var(--mining-dark)] text-white">
+        <div class="container mx-auto px-6">
+            <div class="section-title text-center mb-12">
+                <h2 class="text-4xl text-[var(--mining-gold)]">Contact Us</h2>
             </div>
-            
-            <p style="text-align: center; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Discover how EMASHER ENGINEERING can support your operations and contribute to your success. Contact us for a consultation or to learn more about our comprehensive range of services.</p>
-            
-            <div class="contact-details">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
+            <p class="text-center mb-10 max-w-2xl mx-auto text-lg">Discover how EMASHER ENGINEERING can power your mining operation. Get in touch for consultations or detailed capability presentations.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+                <div class="contact-item bg-black bg-opacity-15 p-6 rounded-xl flex items-center">
+                    <i class="fas fa-map-marker-alt text-3xl text-[var(--mining-gold)] mr-4"></i>
                     <div>
-                        <h3>Location</h3>
-                        <p>1629 Tafuna Street Ndeke ZCBC Village, Kitwe, Copperbelt Province, Zambia</p>
+                        <h3 class="text-lg font-semibold mb-1">Location</h3>
+                        <p>1629 Tafuna Street, Ndeke ZCBC, Kitwe, Zambia</p>
                     </div>
                 </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
+                <div class="contact-item bg-black bg-opacity-15 p-6 rounded-xl flex items-center">
+                    <i class="fas fa-phone-alt text-3xl text-[var(--mining-gold)] mr-4"></i>
                     <div>
-                        <h3>Phone Numbers</h3>
+                        <h3 class="text-lg font-semibold mb-1">Phone Numbers</h3>
                         <p>0962227157, 0971898130</p>
                     </div>
                 </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
+                <div class="contact-item bg-black bg-opacity-15 p-6 rounded-xl flex items-center">
+                    <i class="fas fa-envelope text-3xl text-[var(--mining-gold)] mr-4"></i>
                     <div>
-                        <h3>Email</h3>
+                        <h3 class="text-lg font-semibold mb-1">Email</h3>
                         <p>emasherengineering@gmail.com</p>
                     </div>
                 </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-clock"></i>
+                <div class="contact-item bg-black bg-opacity-15 p-6 rounded-xl flex items-center">
+                    <i class="fas fa-clock text-3xl text-[var(--mining-gold)] mr-4"></i>
                     <div>
-                        <h3>Business Hours</h3>
-                        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                        <h3 class="text-lg font-semibold mb-1">Business Hours</h3>
+                        <p>Mon - Fri: 8:00 AM - 5:00 PM</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="qr-code">
-                <p>QR Code<br>Scan to contact us</p>
+            <div class="qr-code w-40 h-40 bg-white rounded-lg mx-auto flex items-center justify-center text-gray-700 text-center font-semibold text-sm border-2 border-[var(--mining-gold)]">
+                QR Code<br>— Scan to contact us —
             </div>
-            
-            <div class="contact-cta">
-                <a href="#" class="cta-button">Get In Touch</a>
+            <div class="text-center mt-10">
+                <a href="mailto:emasherengineering@gmail.com" class="inline-block bg-[var(--mining-gold)] text-[var(--mining-dark)] py-3 px-8 rounded-full font-semibold font-montserrat hover:bg-yellow-600 transition duration-300">Get In Touch</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 EMASHER ENGINEERING. All Rights Reserved.</p>
+    <footer class="py-8 bg-mining-dark text-white text-center bg-[#241A15]">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 EMASHER ENGINEERING. All Rights Reserved.</p>
         </div>
     </footer>
+
+<script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Carousel Functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
+    const indicatorsContainer = document.getElementById('indicators');
+
+    function updateCarousel() {
+        const carousel = document.getElementById('carousel');
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        updateIndicators();
+    }
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+    }
+    function updateIndicators() {
+        indicatorsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('span');
+            indicator.className = `w-3 h-3 inline-block mx-1 rounded-full cursor-pointer ${i === currentSlide ? 'bg-[var(--mining-gold)]' : 'bg-gray-400'}`;
+            indicator.addEventListener('click', () => goToSlide(i));
+            indicatorsContainer.appendChild(indicator);
+        }
+    }
+    updateIndicators();
+    // Smooth Scroll for Navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>
